@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance &middot; hlds.run</title>
+  <meta name="description" content="Service maintenance page" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'spin-slow': 'spin 12s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('maintenance', () => {
+        const navLang = (navigator.language || navigator.userLanguage || 'en-US').replace(/_/g, '-');
+        const [langCode, regionCode] = navLang.split('-');
+        const cisRegions = ['RU', 'UA', 'BY', 'KZ', 'UZ', 'KG', 'TM', 'TJ', 'AZ', 'AM', 'MD'];
+        const detected = langCode === 'ru' || cisRegions.includes(regionCode?.toUpperCase()) ? 'ru' : 'en';
+
+        return {
+          lang: detected,
+          messages: {
+            ru: {
+              title: 'Сервис временно недоступен',
+              description: 'Идут технические работы. Скоро вернёмся!',
+              info: 'Дополнительная информация:',
+            },
+            en: {
+              title: 'Service is temporarily unavailable',
+              description: 'Maintenance in progress. We\'ll be back shortly.',
+              info: 'Additional information:',
+            },
+          },
+          get m() {
+            return this.messages[this.lang];
+          },
+          toggleLang() {
+            this.lang = this.lang === 'ru' ? 'en' : 'ru';
+          },
+        };
+      });
+    });
+  </script>
+  <style>
+    :root {
+      --body-bg: #f1f5f9;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --text-tertiary: #64748b;
+      --text-footer: #94a3b8;
+      --badge-text: #991b1b;
+      --badge-bg: rgba(153, 27, 27, 0.08);
+      --badge-border: rgba(153, 27, 27, 0.2);
+      --badge-dot: #991b1b;
+      --toggle-bg: rgba(0, 0, 0, 0.05);
+      --toggle-hover-bg: rgba(0, 0, 0, 0.1);
+      --toggle-text: rgba(0, 0, 0, 0.75);
+      --toggle-hover-text: rgba(0, 0, 0, 0.95);
+      --toggle-border: rgba(0, 0, 0, 0.1);
+      --toggle-focus: rgba(0, 0, 0, 0.15);
+      --btn-bg: rgba(0, 0, 0, 0.04);
+      --btn-hover-bg: rgba(0, 0, 0, 0.08);
+      --btn-border: rgba(0, 0, 0, 0.08);
+      --btn-hover-border: rgba(0, 0, 0, 0.15);
+      --btn-text: rgba(0, 0, 0, 0.75);
+      --btn-hover-text: rgba(0, 0, 0, 0.95);
+      --dot-grid: rgba(0, 0, 0, 0.04);
+      --divider: rgba(0, 0, 0, 0.12);
+      --blob-violet: rgba(139, 92, 246, 0.15);
+      --blob-cyan: rgba(6, 182, 212, 0.1);
+      --blob-amber: rgba(245, 158, 11, 0.08);
+      --gh-icon: #94a3b8;
+      --gh-hover: #1e293b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --body-bg: #030712;
+        --card-bg: rgba(255, 255, 255, 0.04);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.5);
+        --text-tertiary: rgba(255, 255, 255, 0.55);
+        --text-footer: rgba(255, 255, 255, 0.15);
+        --badge-text: #f87168;
+        --badge-bg: rgba(248, 113, 113, 0.1);
+        --badge-border: rgba(248, 113, 113, 0.2);
+        --badge-dot: #f87168;
+        --toggle-bg: rgba(255, 255, 255, 0.1);
+        --toggle-hover-bg: rgba(255, 255, 255, 0.2);
+        --toggle-text: rgba(255, 255, 255, 0.8);
+        --toggle-hover-text: rgba(255, 255, 255, 1);
+        --toggle-border: rgba(255, 255, 255, 0.1);
+        --toggle-focus: rgba(255, 255, 255, 0.25);
+        --btn-bg: rgba(255, 255, 255, 0.05);
+        --btn-hover-bg: rgba(255, 255, 255, 0.1);
+        --btn-border: rgba(255, 255, 255, 0.1);
+        --btn-hover-border: rgba(255, 255, 255, 0.2);
+        --btn-text: rgba(255, 255, 255, 0.8);
+        --btn-hover-text: rgba(255, 255, 255, 1);
+        --dot-grid: rgba(255, 255, 255, 0.025);
+        --divider: rgba(255, 255, 255, 0.15);
+        --blob-violet: rgba(139, 92, 246, 0.4);
+        --blob-cyan: rgba(6, 182, 212, 0.3);
+        --blob-amber: rgba(245, 158, 11, 0.2);
+        --gh-icon: #9ca3af;
+        --gh-hover: #ffffff;
+      }
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--dot-grid) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (orientation: landscape) and (max-height: 530px) {
+      .card-grid.grid-cols-1 {
+        grid-template-columns: auto 1fr;
+      }
+
+      div[x-data~=maintenance] {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-[100dvh] bg-[var(--body-bg)] flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto font-sans antialiased">
+  <!-- Background blobs -->
+  <div class="blob w-96 h-96 bg-[var(--blob-violet)] max-md:opacity-50 top-[-10%] left-[-5%] animate-float"
+    style="animation-delay: 0s;"></div>
+  <div class="blob w-[30rem] h-[30rem] bg-[var(--blob-cyan)] max-md:opacity-50 bottom-[-15%] right-[-10%] animate-float"
+    style="animation-delay: -3s;"></div>
+  <div class="blob w-80 h-80 bg-[var(--blob-amber)] max-md:opacity-30 top-[40%] right-[-5%] animate-float"
+    style="animation-delay: -1.5s;"></div>
+
+  <main>
+    <!-- Main card -->
+    <div x-data="maintenance" class="relative z-10 w-full max-w-lg lg:max-w-xl 2xl:max-w-4xl" x-cloak>
+      <div
+        class="relative bg-[var(--card-bg)] backdrop-blur-2xl border border-[var(--card-border)] rounded-2xl sm:rounded-3xl p-4 sm:p-10 md:p-12 lg:p-16 2xl:p-24 shadow-2xl">
+        <!-- Toggle button -->
+        <button @click="toggleLang"
+          class="absolute top-2 right-2 sm:top-4 sm:right-4 px-2 py-1 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-sm 2xl:text-base font-medium bg-[var(--toggle-bg)] hover:bg-[var(--toggle-hover-bg)] text-[var(--toggle-text)] hover:text-[var(--toggle-hover-text)] border border-[var(--toggle-border)] backdrop-blur-sm transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--toggle-focus)] z-10">
+          <span x-text="lang === 'ru' ? 'EN' : 'RU'">RU</span>
+        </button>
+
+        <div class="card-grid grid grid-cols-1 items-center gap-3 sm:gap-8 lg:gap-10">
+
+          <!-- Visual: Gear + 503 -->
+          <div class="flex flex-col items-center gap-2 sm:gap-5 2xl:gap-6">
+            <div class="relative">
+              <div class="absolute inset-0 bg-amber-500/15 rounded-full blur-3xl scale-125 sm:scale-150 2xl:scale-[2]">
+              </div>
+              <div
+                class="relative text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl select-none animate-spin-slow inline-flex leading-none">
+                &#9881;</div>
+            </div>
+            <div
+              class="inline-flex items-center gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-[var(--badge-text)] text-[9px] sm:text-xs 2xl:text-sm font-semibold tracking-wider uppercase">
+              <span
+                class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[var(--badge-dot)] animate-pulse flex-shrink-0"></span>
+              503 Service Unavailable
+            </div>
+          </div>
+
+          <!-- Content: Title + Description + Links -->
+          <div class="flex flex-col items-center gap-2 sm:gap-4 2xl:gap-5 text-center">
+            <h1 class="text-xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold text-[var(--text-primary)] leading-tight"
+              x-text="m.title">Service is temporarily unavailable</h1>
+            <p class="text-[var(--text-secondary)] text-xs sm:text-base md:text-lg 2xl:text-xl leading-relaxed text-pretty"
+              x-text="m.description">Maintenance in progress. We'll be back shortly.</p>
+            <div class="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent via-[var(--divider)] to-transparent"></div>
+            <p class="text-[var(--text-tertiary)] text-[10px] sm:text-sm 2xl:text-base" x-text="m.info">Additional
+              information:</p>
+            <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
+              <a href="https://t.me/hldsrun_news" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 2xl:px-6 2xl:py-3 rounded-xl bg-[var(--btn-bg)] hover:bg-[var(--btn-hover-bg)] border border-[var(--btn-border)] hover:border-[var(--btn-hover-border)] text-[var(--btn-text)] hover:text-[var(--btn-hover-text)] transition-all duration-300 group cursor-pointer">
+                <svg viewBox="0 0 24 24" fill="currentColor"
+                  class="w-3.5 h-3.5 sm:w-5 sm:h-5 2xl:w-6 2xl:h-6 text-sky-400 group-hover:text-sky-300 transition-colors flex-shrink-0">
+                  <path
+                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
+                <span class="font-medium text-[10px] sm:text-sm 2xl:text-base whitespace-nowrap">hldsrun_news</span>
+              </a>
+              <a href="https://github.com/hlds-run" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 2xl:px-6 2xl:py-3 rounded-xl bg-[var(--btn-bg)] hover:bg-[var(--btn-hover-bg)] border border-[var(--btn-border)] hover:border-[var(--btn-hover-border)] text-[var(--btn-text)] hover:text-[var(--btn-hover-text)] transition-all duration-300 group cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor"
+                  class="w-3.5 h-3.5 sm:w-5 sm:h-5 2xl:w-6 2xl:h-6 text-[var(--gh-icon)] group-hover:text-[var(--gh-hover)] transition-colors flex-shrink-0">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                <span class="font-medium text-[10px] sm:text-sm 2xl:text-base whitespace-nowrap">hlds-run</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
