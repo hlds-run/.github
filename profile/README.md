@@ -31,6 +31,12 @@ We maintain two actively supported and regularly updated documentation resources
 | [AMX Mod X Documentation](https://hlds.run/amxx) | A documentation system for AMX Mod X and Pawn, developed from scratch as a XenForo add-on. |
 | [Alternative AMX Mod X Documentation](https://docs.hlds.run/) | An alternative documentation site in a familiar format used by the community, refreshed with up-to-date include files and reference materials. |
 
+## Preservation & Backups
+
+Since the beginning of https://hlds.run, we have enabled website archiving through the [Internet Archive (Wayback Machine)](https://web.archive.org/web/*/hlds.run).
+
+This provides an additional way to access previously archived versions of the website if the main resource becomes unavailable, experiences data loss, or needs to be restored. Archived snapshots may not include every page or the latest changes, but they can help preserve and recover valuable community knowledge.
+
 ## Projects
 
 Our repositories contain tools, infrastructure, documentation, and community resources.
@@ -77,3 +83,4 @@ Before starting significant work, consider opening an issue to discuss the propo
 - **Practicality** — focus on useful tools, solutions, and maintainable infrastructure.
 - **Preservation** — valuable knowledge and resources should not disappear.
 - **Transparency** — development, decisions, and project maintenance should be visible.
+- **Long-term preservation** — make community knowledge and resources resilient to service outages and potential data loss through independent archiving.
