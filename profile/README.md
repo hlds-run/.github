@@ -1,80 +1,79 @@
-./hlds.run
+# ./hlds.run
 
-An open community and engineering hub for GoldSrc, Half-Life Dedicated Server (HLDS), and AMX Mod X.
+**An independent, community-driven hub for GoldSrc, Half-Life Dedicated Server (HLDS), and AMX Mod X.**
 
-"Website & Forum" (https://hlds.run) · "Telegram" (https://hlds.run/to/telegram) · "GitHub Projects" (https://github.com/orgs/hlds-run/projects) · "Service Status" (https://hlds-run.github.io/upptime/)
+[Community Forum](https://hlds.run/) · [AMX Mod X Documentation](https://hlds.run/amxx) · [Alternative Documentation](https://docs.hlds.run/) · [News Channel](https://t.me/hldsrun_news) · [Telegram Community](https://hlds.run/to/telegram) · [GitHub Issues](https://github.com/orgs/hlds-run/issues) · [Service Status](https://hlds-run.github.io/upptime/)
 
 ---
 
-About
+## About
 
-"./hlds.run" is an open community-driven project focused on preserving, improving, and documenting the GoldSrc ecosystem.
+**hlds.run** is an independent community dedicated to preserving, developing, and sharing knowledge about GoldSrc, Half-Life Dedicated Server, and AMX Mod X.
 
-We bring together developers, server administrators, plugin authors, and enthusiasts to share knowledge, maintain useful tools, and build infrastructure for the games and technologies we care about.
+The project builds upon the experience and knowledge accumulated by the community over the years, including the legacy of Dev-CS.ru. Our goal is to provide a reliable place where developers, server administrators, and enthusiasts can exchange knowledge, publish their work, collaborate, and keep the GoldSrc ecosystem alive.
 
-Our goal is not simply to preserve legacy software, but to make it easier to understand, maintain, extend, and use.
+We believe that community-driven development, open knowledge sharing, and long-term preservation are essential for maintaining and improving the ecosystem.
 
-What we do
+## What We Do
 
-- Preserve knowledge. Collect, document, and maintain technical information, source code, and historical resources.
-- Build tools. Develop utilities and infrastructure for GoldSrc servers, AMX Mod X, and related workflows.
-- Improve documentation. Make APIs, scripting interfaces, and development practices easier to discover and understand.
-- Support developers. Provide a place to discuss problems, share solutions, review contributions, and collaborate on improvements.
-- Build a sustainable community. Encourage transparent processes, shared responsibility, and long-term maintenance.
+- **Knowledge Sharing** — maintain technical documentation, guides, tutorials, and practical solutions.
+- **Development** — create and maintain tools, libraries, plugins, and infrastructure for GoldSrc and AMX Mod X.
+- **Community** — provide a place for developers and server administrators to discuss ideas, ask questions, and share experience.
+- **Preservation** — collect and maintain useful resources, builds, source code, and technical knowledge.
+- **Collaboration** — encourage open-source contributions and community-driven initiatives.
 
-Explore our projects
+## Documentation
 
-Project| Description
-"hlds-builds" (https://github.com/hlds-run/hlds-builds)| Archive of HLDS builds with direct download links.
-"pawn-docgen" (https://github.com/hlds-run/pawn-docgen)| Documentation generation tooling for Pawn-related projects.
-"amxx-nova-pc" (https://github.com/hlds-run/amxx-nova-pc)| AMX Mod X-related project.
-"amxmodx" (https://github.com/hlds-run/amxmodx)| Organization-maintained fork of AMX Mod X.
-"IncParser" (https://github.com/hlds-run/IncParser)| Viewer for AMX Mod X Pawn include files and their documentation.
-"QuoteCollapse" (https://github.com/hlds-run/QuoteCollapse)| XenForo add-on for collapsible blockquotes.
-"reverse-edge-proxy" (https://github.com/hlds-run/reverse-edge-proxy)| Lightweight regional edge proxy for connectivity challenges.
-"upptime" (https://github.com/hlds-run/upptime)| Public service availability monitoring.
+We maintain two actively supported and regularly updated documentation resources. Both provide relevant and up-to-date reference materials, including current include files. They differ in presentation and format, so you can use whichever one you prefer.
 
-Some repositories are forks, archives, or specialized utilities. Check each repository's README, license, and maintenance status before using or contributing to it.
+| Resource | Description |
+| --- | --- |
+| [AMX Mod X Documentation](https://hlds.run/amxx) | A documentation system for AMX Mod X and Pawn, developed from scratch as a XenForo add-on. |
+| [Alternative AMX Mod X Documentation](https://docs.hlds.run/) | An alternative documentation site in a familiar format used by the community, refreshed with up-to-date include files and reference materials. |
 
-Documentation and community
+## Projects
 
-- "hlds.run" (https://hlds.run/) — our community forum for GoldSrc, HLDS, AMX Mod X, plugins, modules, maps, tools, and technical discussions.
-- "AMX Mod X documentation" (https://hlds.run/amxx) — documentation and reference materials for AMX Mod X.
-- "Telegram community" (https://hlds.run/to/telegram) — community discussions and updates.
-- "Service status" (https://hlds-run.github.io/upptime/) — availability information for monitored services.
+Our repositories contain tools, infrastructure, documentation, and community resources.
 
-Contributing
+| Project | Description |
+| --- | --- |
+| [hlds-builds](https://github.com/hlds-run/hlds-builds) · [Releases](https://github.com/hlds-run/hlds-builds/releases) | Community archive of HLDS builds distributed through GitHub Releases. |
+| [pawn-docgen](https://github.com/hlds-run/pawn-docgen) · [Documentation](https://docs.hlds.run/) | Docker-based deployment of the Pawn documentation generator and its supporting services. |
+| [amxx-nova-pc](https://github.com/hlds-run/amxx-nova-pc) | An enhanced AMX Mod X compiler for building plugins, with improvements over the original compiler. |
+| [IncParser](https://github.com/hlds-run/IncParser) | The parser powering [hlds.run/amxx](https://hlds.run/amxx), a documentation system for AMX Mod X and Pawn built as a XenForo add-on. |
+| [QuoteCollapse](https://github.com/hlds-run/QuoteCollapse) | A XenForo add-on that makes long quoted messages collapsible, keeping forum discussions readable. |
+| [addon-resource-publish-date](https://github.com/hlds-run/addon-resource-publish-date) · [Latest release](https://github.com/hlds-run/addon-resource-publish-date/releases/latest) | XenForo Resource Manager add-on that sets a resource's publication date when it is approved by a moderator. |
+| [reverse-edge-proxy](https://github.com/hlds-run/reverse-edge-proxy) | An Nginx-based regional proxy originally deployed as a temporary alternative access route for users in Russia during connectivity issues. It powered [ru.hlds.run](https://ru.hlds.run/) and may be deployed again if similar access problems arise in the future. |
+| [upptime](https://github.com/hlds-run/upptime) · [Status page](https://hlds-run.github.io/upptime/) | Uptime monitoring for community services, with a public status page and availability history. |
 
-We welcome contributions from developers, server administrators, documentation authors, testers, and community members.
+## Community
+
+Join the community and stay informed about the project:
+
+- **[Forum](https://hlds.run/)** — discussions, questions, tutorials, releases, and community resources.
+- **[News Channel](https://t.me/hldsrun_news)** — important project announcements, updates, and news. Posts are infrequent and focused on significant information.
+- **[Telegram Community](https://hlds.run/to/telegram)** — community chat and discussions.
+- **[GitHub Issues](https://github.com/orgs/hlds-run/issues)** — report bugs, suggest improvements, and follow ongoing tasks.
+- **[Service Status](https://hlds-run.github.io/upptime/)** — check the availability of community services and view incident history.
+
+## Contributing
+
+We welcome contributions from developers, server administrators, technical writers, and enthusiasts.
 
 You can help by:
 
 - Reporting bugs and suggesting improvements through GitHub Issues.
-- Contributing code, tests, documentation, and examples.
-- Reviewing pull requests and testing changes.
-- Sharing technical knowledge and helping other community members.
-- Improving project infrastructure and maintenance workflows.
+- Contributing code, documentation, and technical guides.
+- Sharing useful plugins, tools, and resources.
+- Helping other community members on the forum.
+- Participating in discussions about the project's direction.
 
-Before contributing, check the target repository's contribution guidelines and open issues. For larger changes, discuss the proposal with maintainers before investing significant effort.
+Before starting significant work, consider opening an issue to discuss the proposed changes.
 
-Our principles
+## Principles
 
-- Open knowledge: useful technical information should be discoverable and shareable.
-- Maintainability: prefer solutions that can be understood, tested, and maintained over time.
-- Transparency: make decisions, project status, and responsibilities as clear as practical.
-- Collaboration: build on shared experience and give credit to original authors.
-- Respect for upstream: preserve attribution, follow applicable licenses, and contribute improvements responsibly.
-
-Each repository may have its own license and contribution requirements. The organization does not impose a single license on all projects.
-
-Get involved
-
-Explore our repositories, join the community, or open an issue to start a discussion.
-
-Website: https://hlds.run
-GitHub: https://github.com/hlds-run
-Telegram: https://hlds.run/to/telegram
-
----
-
-Built by the community, for the GoldSrc ecosystem.
+- **Community-driven** — the project exists for and is shaped by its community.
+- **Open knowledge** — technical information and experience should be accessible.
+- **Practicality** — focus on useful tools, solutions, and maintainable infrastructure.
+- **Preservation** — valuable knowledge and resources should not disappear.
+- **Transparency** — development, decisions, and project maintenance should be visible.
