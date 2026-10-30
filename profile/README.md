@@ -2,7 +2,7 @@
 
 **An independent, community-driven hub for GoldSrc, Half-Life Dedicated Server (HLDS), and AMX Mod X.**
 
-[Community Forum](https://hlds.run/) · [AMX Mod X Documentation](https://hlds.run/amxx) · [Alternative Documentation](https://docs.hlds.run/) · [News Channel](https://t.me/hldsrun_news) · [Telegram Community](https://hlds.run/to/telegram) · [GitHub Issues](https://github.com/orgs/hlds-run/issues) · [Service Status](https://hlds-run.github.io/upptime/)
+[Community Forum](https://hlds.run/) · [AMX Mod X Documentation](https://hlds.run/amxx) · [Alternative Documentation](https://docs.hlds.run/) · [News Channel](https://t.me/hldsrun_news) · [Telegram Community](https://hlds.run/to/telegram) · [Service Status](https://hlds-run.github.io/upptime/)
 
 ---
 
